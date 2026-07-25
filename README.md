@@ -1,6 +1,8 @@
-# CUET Workshop Hackathon Projects
+# CUET Workshop 1h Hackathon ft Mysoftheaven (BD) Ltd
 
-Welcome to the **CUET Workshop Hackathon Projects** repository. This workspace contains three rapidly prototyped applications demonstrating frontend and backend engineering, machine learning inference, and AI service integrations.
+Welcome to the **CUET Workshop Hackathon 1h Hackathon ft Mysoftheaven (BD) Ltd** repository. This workspace contains three rapidly prototyped applications demonstrating frontend and backend engineering, machine learning inference, and AI service integrations.
+
+The problems/tasks of this hackathon are in the file `problems.md`.
 
 ---
 
