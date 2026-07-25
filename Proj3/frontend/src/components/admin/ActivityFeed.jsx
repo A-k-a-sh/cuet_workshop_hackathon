@@ -53,7 +53,7 @@ export default function ActivityFeed() {
       <style dangerouslySetInnerHTML={{ __html: slideInAnimation }} />
       
       <div className="border-b border-slate-50 dark:border-slate-800 pb-3">
-        <h3 className="font-extrabold text-slate-850 dark:text-slate-100 text-sm">
+        <h3 className="font-extrabold text-slate-800 dark:text-slate-100 text-sm">
           Platform Activity Live Monitor
         </h3>
         <p className="text-3xs text-slate-400 dark:text-slate-500 mt-0.5">
@@ -66,22 +66,22 @@ export default function ActivityFeed() {
         {enrichedFeed.map((act) => (
           <div
             key={act.id}
-            className="animate-activity-slide flex items-center justify-between gap-4 p-3 bg-slate-50 dark:bg-slate-855/40 border border-slate-100/50 dark:border-slate-850 rounded-xl hover:shadow-xs transition-shadow"
+            className="animate-activity-slide flex items-center justify-between gap-4 p-3 bg-slate-50 dark:bg-slate-800/40 border border-slate-100/50 dark:border-slate-800 rounded-xl hover:shadow-xs transition-shadow"
           >
             <div className="flex items-center gap-3 min-w-0">
               {/* Type Icon */}
-              <span className="text-xl h-9 w-9 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-750 shadow-2xs rounded-lg flex items-center justify-center shrink-0">
+              <span className="text-xl h-9 w-9 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-800 shadow-2xs rounded-lg flex items-center justify-center shrink-0">
                 {act.icon}
               </span>
               
               {/* Action Log Message */}
-              <p className="text-xs text-slate-750 dark:text-slate-300 font-semibold truncate max-w-sm sm:max-w-md">
+              <p className="text-xs text-slate-700 dark:text-slate-300 font-semibold truncate max-w-sm sm:max-w-md">
                 {act.message}
               </p>
             </div>
 
             {/* Time Stamp */}
-            <span className="text-4xs font-mono font-bold text-slate-400 shrink-0 select-none bg-white dark:bg-slate-800 px-2 py-1 rounded border border-slate-100 dark:border-slate-750">
+            <span className="text-4xs font-mono font-bold text-slate-400 shrink-0 select-none bg-white dark:bg-slate-800 px-2 py-1 rounded border border-slate-100 dark:border-slate-800">
               {act.timeStr}
             </span>
           </div>

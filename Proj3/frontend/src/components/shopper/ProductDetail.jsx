@@ -54,7 +54,7 @@ export default function ProductDetail({ productId, onBack, onAddToCartTriggered 
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
         {/* Product Image */}
-        <div className="bg-slate-50 dark:bg-slate-800/40 rounded-2xl h-64 flex items-center justify-center text-7xl shadow-inner border border-slate-100/50 dark:border-slate-850">
+        <div className="bg-slate-50 dark:bg-slate-800/40 rounded-2xl h-64 flex items-center justify-center text-7xl shadow-inner border border-slate-100/50 dark:border-slate-800">
           {product.image}
         </div>
 
@@ -91,15 +91,15 @@ export default function ProductDetail({ productId, onBack, onAddToCartTriggered 
           {!isOutOfStock && (
             <div className="flex items-center justify-between gap-4 mt-2">
               <span className="text-xs font-bold text-slate-400">Quantity:</span>
-              <div className="flex items-center bg-slate-50 dark:bg-slate-800/70 border border-slate-150 dark:border-slate-750 p-1.5 rounded-xl gap-3">
+              <div className="flex items-center bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-1.5 rounded-xl gap-3">
                 <button
                   type="button"
                   onClick={() => handleQtyChange(-1)}
                   disabled={quantity <= 1}
                   className={`h-7 w-7 rounded-lg flex items-center justify-center text-xs font-bold cursor-pointer transition-all ${
                     quantity <= 1
-                      ? 'text-slate-350 dark:text-slate-650 cursor-not-allowed'
-                      : 'bg-white dark:bg-slate-700 hover:bg-slate-100 text-slate-750 dark:text-slate-200 border border-slate-200/50 dark:border-slate-600 shadow-2xs'
+                      ? 'text-slate-300 dark:text-slate-600 cursor-not-allowed'
+                      : 'bg-white dark:bg-slate-700 hover:bg-slate-100 text-slate-700 dark:text-slate-200 border border-slate-200/50 dark:border-slate-600 shadow-2xs'
                   }`}
                 >
                   -
@@ -113,8 +113,8 @@ export default function ProductDetail({ productId, onBack, onAddToCartTriggered 
                   disabled={quantity >= product.stock}
                   className={`h-7 w-7 rounded-lg flex items-center justify-center text-xs font-bold cursor-pointer transition-all ${
                     quantity >= product.stock
-                      ? 'text-slate-350 dark:text-slate-650 cursor-not-allowed'
-                      : 'bg-white dark:bg-slate-700 hover:bg-slate-100 text-slate-750 dark:text-slate-200 border border-slate-200/50 dark:border-slate-600 shadow-2xs'
+                      ? 'text-slate-300 dark:text-slate-600 cursor-not-allowed'
+                      : 'bg-white dark:bg-slate-700 hover:bg-slate-100 text-slate-700 dark:text-slate-200 border border-slate-200/50 dark:border-slate-600 shadow-2xs'
                   }`}
                 >
                   +

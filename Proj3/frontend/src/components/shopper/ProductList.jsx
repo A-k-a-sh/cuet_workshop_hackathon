@@ -73,7 +73,7 @@ export default function ProductList({ onSelectProduct, onAddToCartTriggered }) {
             <div
               key={product.id}
               onClick={() => onSelectProduct(product.id)}
-              className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-850 rounded-2xl p-5 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer group"
+              className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl p-5 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer group"
             >
               <div>
                 {/* Emoji image container */}
@@ -121,7 +121,7 @@ export default function ProductList({ onSelectProduct, onAddToCartTriggered }) {
                   onClick={(e) => handleAddToCart(e, product.id)}
                   className={`px-3 py-2 rounded-xl text-[10px] font-bold tracking-wider uppercase flex items-center gap-1.5 transition-all cursor-pointer ${
                     isOutOfStock
-                      ? 'bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-650 cursor-not-allowed border border-slate-200/50 dark:border-slate-750'
+                      ? 'bg-slate-150 dark:bg-slate-800 text-slate-400 dark:text-slate-600 cursor-not-allowed border border-slate-200/50 dark:border-slate-700'
                       : 'bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-500/20 active:scale-95'
                   }`}
                 >
@@ -137,7 +137,7 @@ export default function ProductList({ onSelectProduct, onAddToCartTriggered }) {
       </div>
 
       {filteredProducts.length === 0 && (
-        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 p-12 text-center text-slate-450">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 p-12 text-center text-slate-500 dark:text-slate-400">
           <svg className="h-12 w-12 text-slate-300 dark:text-slate-700 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
             <path strokeLinecap="round" strokeLinejoin="round" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>

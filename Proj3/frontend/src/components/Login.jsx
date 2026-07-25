@@ -132,7 +132,7 @@ export default function Login({ onLoginSuccess }) {
               id="user-select"
               value={selectedUserId}
               onChange={(e) => setSelectedUserId(e.target.value)}
-              className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-850 px-3 py-2.5 text-xs rounded-xl text-slate-700 dark:text-slate-350 focus:outline-hidden focus:ring-2 focus:ring-indigo-500 font-bold cursor-pointer transition-all"
+              className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-800 px-3 py-2.5 text-xs rounded-xl text-slate-700 dark:text-slate-300 focus:outline-hidden focus:ring-2 focus:ring-indigo-500 font-bold cursor-pointer transition-all"
             >
               {selectedRole === 'shopper' && shoppers.map(u => (
                 <option key={u.id} value={u.id}>{u.name} (Shopper{u.suspended ? ' - Suspended' : ''})</option>

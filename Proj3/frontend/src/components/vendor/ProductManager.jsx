@@ -122,7 +122,7 @@ export default function ProductManager() {
             if (showForm) resetForm();
             else setShowForm(true);
           }}
-          className="bg-purple-600 hover:bg-purple-750 text-white text-3xs font-bold uppercase tracking-wider px-4 py-2.5 rounded-xl shadow-md shadow-purple-650/15 cursor-pointer active:scale-95 transition-all"
+          className="bg-purple-600 hover:bg-purple-700 text-white text-3xs font-bold uppercase tracking-wider px-4 py-2.5 rounded-xl shadow-md shadow-purple-600/15 cursor-pointer active:scale-95 transition-all"
         >
           {showForm ? 'Close Form' : 'Add New Product'}
         </button>
@@ -130,7 +130,7 @@ export default function ProductManager() {
 
       {/* Slide down / Slide in Form */}
       {showForm && (
-        <form onSubmit={handleSubmit} className="bg-slate-50 dark:bg-slate-855/50 border border-slate-100 dark:border-slate-800 p-5 rounded-xl grid grid-cols-1 md:grid-cols-3 gap-4 animate-fadeIn transition-all">
+        <form onSubmit={handleSubmit} className="bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 p-5 rounded-xl grid grid-cols-1 md:grid-cols-3 gap-4 animate-fadeIn transition-all">
           <div className="md:col-span-3 pb-2 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
             <h4 className="font-extrabold text-xs text-slate-700 dark:text-slate-300 uppercase tracking-wide">
               {editingId ? 'Edit Product Details' : 'Add A New Store Listing'}
@@ -140,7 +140,7 @@ export default function ProductManager() {
 
           {/* Product Name */}
           <div className="flex flex-col gap-1.5 md:col-span-2">
-            <label htmlFor="prod-name" className="text-4xs font-bold uppercase tracking-wide text-slate-400">Product Name *</label>
+            <label htmlFor="prod-name" className="text-4xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Product Name *</label>
             <input
               id="prod-name"
               type="text"
@@ -154,7 +154,7 @@ export default function ProductManager() {
 
           {/* Category Select */}
           <div className="flex flex-col gap-1.5">
-            <label htmlFor="prod-cat" className="text-4xs font-bold uppercase tracking-wide text-slate-400">Category</label>
+            <label htmlFor="prod-cat" className="text-4xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Category</label>
             <select
               id="prod-cat"
               value={category}
@@ -170,7 +170,7 @@ export default function ProductManager() {
 
           {/* Price */}
           <div className="flex flex-col gap-1.5">
-            <label htmlFor="prod-price" className="text-4xs font-bold uppercase tracking-wide text-slate-400">Price ($) *</label>
+            <label htmlFor="prod-price" className="text-4xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Price ($) *</label>
             <input
               id="prod-price"
               type="number"
@@ -186,7 +186,7 @@ export default function ProductManager() {
 
           {/* Stock */}
           <div className="flex flex-col gap-1.5">
-            <label htmlFor="prod-stock" className="text-4xs font-bold uppercase tracking-wide text-slate-400">Stock Quantity *</label>
+            <label htmlFor="prod-stock" className="text-4xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Stock Quantity *</label>
             <input
               id="prod-stock"
               type="number"
@@ -201,7 +201,7 @@ export default function ProductManager() {
 
           {/* Image (Emoji) picker */}
           <div className="flex flex-col gap-1.5">
-            <label htmlFor="prod-emoji" className="text-4xs font-bold uppercase tracking-wide text-slate-400">Icon / Emoji</label>
+            <label htmlFor="prod-emoji" className="text-4xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Icon / Emoji</label>
             <select
               id="prod-emoji"
               value={image}
@@ -216,7 +216,7 @@ export default function ProductManager() {
 
           {/* Description */}
           <div className="flex flex-col gap-1.5 md:col-span-3">
-            <label htmlFor="prod-desc" className="text-4xs font-bold uppercase tracking-wide text-slate-400">Product Description</label>
+            <label htmlFor="prod-desc" className="text-4xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Product Description</label>
             <textarea
               id="prod-desc"
               rows="2"
@@ -304,7 +304,7 @@ export default function ProductManager() {
                       <button
                         type="button"
                         onClick={() => handleDelete(product.id)}
-                        className="text-4xs font-bold uppercase tracking-wider text-red-500 hover:text-red-650 transition-colors cursor-pointer"
+                        className="text-4xs font-bold uppercase tracking-wider text-red-500 hover:text-red-600 transition-colors cursor-pointer"
                       >
                         Delete
                       </button>
@@ -318,7 +318,7 @@ export default function ProductManager() {
       </div>
 
       {vendorProducts.length === 0 && (
-        <div className="py-12 text-center text-slate-400 dark:text-slate-550 w-full">
+        <div className="py-12 text-center text-slate-400 dark:text-slate-500 w-full">
           <svg className="h-12 w-12 text-slate-300 dark:text-slate-700 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
             <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
           </svg>

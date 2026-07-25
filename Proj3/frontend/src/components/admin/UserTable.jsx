@@ -25,7 +25,7 @@ export default function UserTable() {
   return (
     <div className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl p-6 shadow-sm flex flex-col gap-6 text-left w-full">
       <div className="border-b border-slate-50 dark:border-slate-800 pb-3">
-        <h3 className="font-extrabold text-slate-850 dark:text-slate-100 text-sm">
+        <h3 className="font-extrabold text-slate-800 dark:text-slate-100 text-sm">
           User Directory Moderation
         </h3>
         <p className="text-3xs text-slate-400 dark:text-slate-500 mt-0.5">
@@ -51,7 +51,7 @@ export default function UserTable() {
               return (
                 <tr key={user.id} className="text-slate-700 dark:text-slate-350 hover:bg-slate-50 dark:hover:bg-slate-800/15">
                   <td className="py-3.5 pl-2">
-                    <span className={`font-bold ${user.suspended ? 'line-through text-slate-400 dark:text-slate-550' : 'text-slate-850 dark:text-slate-200'}`}>
+                    <span className={`font-bold ${user.suspended ? 'line-through text-slate-400 dark:text-slate-500' : 'text-slate-800 dark:text-slate-200'}`}>
                       {user.name}
                     </span>
                     {isCurrentUser && (
@@ -60,7 +60,7 @@ export default function UserTable() {
                       </span>
                     )}
                   </td>
-                  <td className="py-3.5 font-mono font-semibold text-slate-450 uppercase">
+                  <td className="py-3.5 font-mono font-semibold text-slate-400 uppercase">
                     {user.id}
                   </td>
                   <td className="py-3.5 capitalize font-semibold">

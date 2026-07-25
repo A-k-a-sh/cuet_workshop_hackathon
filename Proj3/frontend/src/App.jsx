@@ -300,7 +300,7 @@ function MarketplaceApp() {
               <button
                 type="button"
                 onClick={handleLogout}
-                className="w-full flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-750 text-slate-350 hover:text-white py-2.5 px-4 rounded-xl text-xs font-bold transition-all cursor-pointer border border-slate-700"
+                className="w-full flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-350 hover:text-white py-2.5 px-4 rounded-xl text-xs font-bold transition-all cursor-pointer border border-slate-700"
               >
                 <span>Logout</span>
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">

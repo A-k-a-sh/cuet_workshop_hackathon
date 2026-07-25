@@ -66,10 +66,10 @@ export default function Cart({ onOrderPlacedSuccess }) {
               return (
                 <div
                   key={item.productId}
-                  className="flex items-center gap-4 bg-slate-50 dark:bg-slate-855/40 p-4 rounded-xl border border-slate-100/50 dark:border-slate-850 hover:shadow-xs transition-shadow"
+                  className="flex items-center gap-4 bg-slate-50 dark:bg-slate-800/40 p-4 rounded-xl border border-slate-100/50 dark:border-slate-800 hover:shadow-xs transition-shadow"
                 >
                   {/* Small Emoji wrapper */}
-                  <div className="h-16 w-16 rounded-lg bg-white dark:bg-slate-700/60 border border-slate-100 dark:border-slate-800 flex items-center justify-center text-3xl shrink-0">
+                  <div className="h-16 w-16 rounded-lg bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-850 flex items-center justify-center text-3xl shrink-0">
                     {item.product.image}
                   </div>
 
@@ -88,11 +88,11 @@ export default function Cart({ onOrderPlacedSuccess }) {
 
                   {/* Quantity Controls */}
                   <div className="flex flex-col items-end gap-2 shrink-0">
-                    <div className="flex items-center bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-750 p-1 rounded-lg gap-2">
+                    <div className="flex items-center bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 p-1 rounded-lg gap-2">
                       <button
                         type="button"
                         onClick={() => handleQtyChange(item.productId, item.quantity, -1, item.product.stock)}
-                        className="h-6 w-6 rounded flex items-center justify-center text-xs font-bold text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-750 cursor-pointer"
+                        className="h-6 w-6 rounded flex items-center justify-center text-xs font-bold text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 cursor-pointer"
                       >
                         -
                       </button>
@@ -105,8 +105,8 @@ export default function Cart({ onOrderPlacedSuccess }) {
                         disabled={item.quantity >= item.product.stock}
                         className={`h-6 w-6 rounded flex items-center justify-center text-xs font-bold cursor-pointer ${
                           item.quantity >= item.product.stock
-                            ? 'text-slate-200 dark:text-slate-700 cursor-not-allowed'
-                            : 'text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-750'
+                            ? 'text-slate-300 dark:text-slate-600 cursor-not-allowed'
+                            : 'text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700'
                         }`}
                       >
                         +
@@ -134,7 +134,7 @@ export default function Cart({ onOrderPlacedSuccess }) {
           </div>
 
           {/* Cart Summary Card */}
-          <div className="w-full lg:w-1/3 bg-slate-50 dark:bg-slate-855/65 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 flex flex-col gap-4">
+          <div className="w-full lg:w-1/3 bg-slate-50 dark:bg-slate-800/60 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 flex flex-col gap-4">
             <h4 className="font-extrabold text-slate-800 dark:text-slate-200 text-xs uppercase tracking-wider border-b border-slate-200 dark:border-slate-800 pb-2">
               Order Summary
             </h4>
@@ -164,7 +164,7 @@ export default function Cart({ onOrderPlacedSuccess }) {
           </div>
         </div>
       ) : (
-        <div className="py-16 text-center text-slate-450 dark:text-slate-550 w-full">
+        <div className="py-16 text-center text-slate-500 dark:text-slate-400 w-full">
           <svg className="h-16 w-16 text-slate-200 dark:text-slate-800 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
             <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
           </svg>

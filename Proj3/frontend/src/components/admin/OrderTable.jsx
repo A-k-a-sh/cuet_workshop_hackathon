@@ -41,8 +41,8 @@ export default function OrderTable() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
         {/* Revenue Card */}
         <div className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl p-5 text-left shadow-sm">
-          <p className="text-4xs font-extrabold uppercase tracking-wider text-slate-450">Cumulative Platform Revenue</p>
-          <h4 className="text-2xl font-black text-slate-850 dark:text-white mt-1">
+          <p className="text-4xs font-extrabold uppercase tracking-wider text-slate-400">Cumulative Platform Revenue</p>
+          <h4 className="text-2xl font-black text-slate-800 dark:text-white mt-1">
             ${platformRevenue.toFixed(2)}
           </h4>
           <span className="text-[10px] text-green-500 font-semibold bg-green-50 dark:bg-green-950/20 px-2 py-0.5 rounded mt-2 inline-block">
@@ -52,8 +52,8 @@ export default function OrderTable() {
 
         {/* Orders Count Card */}
         <div className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl p-5 text-left shadow-sm">
-          <p className="text-4xs font-extrabold uppercase tracking-wider text-slate-450">Total Checkout Transactions</p>
-          <h4 className="text-2xl font-black text-slate-850 dark:text-white mt-1">
+          <p className="text-4xs font-extrabold uppercase tracking-wider text-slate-400">Total Checkout Transactions</p>
+          <h4 className="text-2xl font-black text-slate-800 dark:text-white mt-1">
             {totalSalesCount}
           </h4>
           <span className="text-[10px] text-slate-400 font-medium bg-slate-50 dark:bg-slate-800 px-2 py-0.5 rounded mt-2 inline-block">
@@ -65,7 +65,7 @@ export default function OrderTable() {
       {/* Global Orders Table */}
       <div className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl p-6 shadow-sm flex flex-col gap-4 text-left">
         <div className="border-b border-slate-50 dark:border-slate-800 pb-3">
-          <h3 className="font-extrabold text-slate-850 dark:text-slate-100 text-sm">
+          <h3 className="font-extrabold text-slate-800 dark:text-slate-100 text-sm">
             Global Checkout Audit
           </h3>
           <p className="text-3xs text-slate-400 dark:text-slate-500 mt-0.5">
@@ -136,7 +136,7 @@ export default function OrderTable() {
       {/* Global Product Listings Moderation */}
       <div className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl p-6 shadow-sm flex flex-col gap-4 text-left">
         <div className="border-b border-slate-50 dark:border-slate-800 pb-3">
-          <h3 className="font-extrabold text-slate-850 dark:text-slate-100 text-sm">
+          <h3 className="font-extrabold text-slate-800 dark:text-slate-100 text-sm">
             Catalog Listings Moderation
           </h3>
           <p className="text-3xs text-slate-400 dark:text-slate-500 mt-0.5">
