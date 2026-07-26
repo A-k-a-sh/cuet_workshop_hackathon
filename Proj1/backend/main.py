@@ -159,6 +159,7 @@ Return this exact JSON structure:
         scorecard["filler_counts"] = fillers_detected
         scorecard["duration_seconds"] = duration
         scorecard["word_count"] = data.word_count
+        scorecard["transcript"] = data.transcript
         
         return scorecard
 

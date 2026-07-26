@@ -134,7 +134,10 @@ export default function App() {
       // 4. Wait for the step loaders to reach 2 and let 3 seconds lapse total
       await new Promise(resolve => setTimeout(resolve, 3100));
 
-      setAnalysisResult(result);
+      setAnalysisResult({
+        ...result,
+        transcript
+      });
       setAppState('RESULTS');
 
     } catch (err) {
