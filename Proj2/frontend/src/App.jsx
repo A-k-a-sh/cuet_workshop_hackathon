@@ -21,6 +21,8 @@ const INITIAL_VALUES = {
   thal: 2
 };
 
+const ECG_BACKGROUND = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" fill="none"><defs><radialGradient id="redGlow" cx="80%" cy="20%" r="45%" fx="80%" fy="20%"><stop offset="0%" stop-color="%23f43f5e" stop-opacity="0.12"/><stop offset="100%" stop-color="%23f43f5e" stop-opacity="0"/></radialGradient><radialGradient id="greenGlow" cx="20%" cy="80%" r="55%" fx="20%" fy="80%"><stop offset="0%" stop-color="%2310b981" stop-opacity="0.1"/><stop offset="100%" stop-color="%2310b981" stop-opacity="0"/></radialGradient></defs><rect width="1440" height="900" fill="url(%23redGlow)"/><rect width="1440" height="900" fill="url(%23greenGlow)"/><path d="M 0,350 L 300,350 L 320,310 L 340,390 L 360,330 L 380,350 L 600,350 L 620,280 L 645,440 L 670,320 L 690,350 L 1100,350 L 1120,300 L 1140,400 L 1160,330 L 1180,350 L 1440,350" stroke="%23f43f5e" stroke-width="1.5" stroke-opacity="0.15" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
 export default function App() {
   const [inputs, setInputs] = useState(INITIAL_VALUES);
 
@@ -36,13 +38,17 @@ export default function App() {
   }, [inputs]);
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 flex flex-col relative overflow-hidden transition-colors duration-200">
-      {/* Ambient background mesh glows for heart medical health theme */}
-      <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-rose-500/5 dark:bg-rose-500/10 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-[-15%] left-[-10%] w-[60%] h-[60%] bg-emerald-500/5 dark:bg-emerald-500/10 rounded-full blur-[130px] pointer-events-none"></div>
-      
+    <div 
+      className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 flex flex-col relative overflow-hidden transition-all duration-300"
+      style={{
+        backgroundImage: `url("${ECG_BACKGROUND}")`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
       {/* Subtle ECG diagnostic layout grid overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_20%,#000_60%,transparent_100%)] opacity-20 dark:opacity-30 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_20%,#000_60%,transparent_100%)] opacity-25 dark:opacity-35 pointer-events-none"></div>
 
       {/* Header */}
       <header className="border-b border-slate-200/80 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md sticky top-0 z-50 px-6 py-4 flex items-center justify-between">

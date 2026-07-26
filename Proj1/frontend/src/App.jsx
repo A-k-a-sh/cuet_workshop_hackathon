@@ -4,6 +4,7 @@ import Recorder from './components/Recorder';
 import Uploader from './components/Uploader';
 import Transcript from './components/Transcript';
 import Scorecard from './components/Scorecard';
+import bgImage from './assets/speech_coach_bg.png';
 
 // Custom Skeleton Loader Component
 function SkeletonLoader({ currentStep }) {
@@ -192,14 +193,17 @@ Transcript:
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans antialiased relative overflow-hidden transition-colors duration-200">
-      {/* Ambient background mesh glows */}
-      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-emerald-600/10 rounded-full blur-[140px] pointer-events-none"></div>
-      <div className="absolute top-[30%] right-[10%] w-[40%] h-[40%] bg-indigo-600/5 rounded-full blur-[100px] pointer-events-none"></div>
-      
+    <div 
+      className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans antialiased relative overflow-hidden transition-all duration-300"
+      style={{
+        backgroundImage: `radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.65) 0%, rgba(2, 6, 23, 0.98) 100%), url(${bgImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+      }}
+    >
       {/* Subtle diagnostic layout grid overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-25 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-15 pointer-events-none"></div>
 
       {/* Toast Notification */}
       {toast && (

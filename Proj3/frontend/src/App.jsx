@@ -13,6 +13,11 @@ import UserTable from './components/admin/UserTable';
 import OrderTable from './components/admin/OrderTable';
 import ActivityFeed from './components/admin/ActivityFeed';
 
+const SHOPPER_BG = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" fill="none"><defs><radialGradient id="g1" cx="85%" cy="15%" r="50%"><stop offset="0%" stop-color="%233b82f6" stop-opacity="0.1"/><stop offset="100%" stop-color="%233b82f6" stop-opacity="0"/></radialGradient><radialGradient id="g2" cx="15%" cy="85%" r="50%"><stop offset="0%" stop-color="%233b82f6" stop-opacity="0.08"/><stop offset="100%" stop-color="%233b82f6" stop-opacity="0"/></radialGradient></defs><rect width="1440" height="900" fill="url(%23g1)"/><rect width="1440" height="900" fill="url(%23g2)"/><path d="M 0,200 Q 360,100 720,200 T 1440,200" stroke="%233b82f6" stroke-width="1" stroke-opacity="0.08" fill="none"/><path d="M 0,600 Q 360,700 720,600 T 1440,600" stroke="%233b82f6" stroke-width="1" stroke-opacity="0.08" fill="none"/></svg>`;
+const VENDOR_BG = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" fill="none"><defs><radialGradient id="g1" cx="85%" cy="15%" r="50%"><stop offset="0%" stop-color="%23a855f7" stop-opacity="0.1"/><stop offset="100%" stop-color="%23a855f7" stop-opacity="0"/></radialGradient><radialGradient id="g2" cx="15%" cy="85%" r="50%"><stop offset="0%" stop-color="%23a855f7" stop-opacity="0.08"/><stop offset="100%" stop-color="%23a855f7" stop-opacity="0"/></radialGradient></defs><rect width="1440" height="900" fill="url(%23g1)"/><rect width="1440" height="900" fill="url(%23g2)"/><path d="M 0,200 Q 360,100 720,200 T 1440,200" stroke="%23a855f7" stroke-width="1" stroke-opacity="0.08" fill="none"/><path d="M 0,600 Q 360,700 720,600 T 1440,600" stroke="%23a855f7" stroke-width="1" stroke-opacity="0.08" fill="none"/></svg>`;
+const ADMIN_BG = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" fill="none"><defs><radialGradient id="g1" cx="85%" cy="15%" r="50%"><stop offset="0%" stop-color="%2364748b" stop-opacity="0.1"/><stop offset="100%" stop-color="%2364748b" stop-opacity="0"/></radialGradient><radialGradient id="g2" cx="15%" cy="85%" r="50%"><stop offset="0%" stop-color="%2364748b" stop-opacity="0.08"/><stop offset="100%" stop-color="%2364748b" stop-opacity="0"/></radialGradient></defs><rect width="1440" height="900" fill="url(%23g1)"/><rect width="1440" height="900" fill="url(%23g2)"/><path d="M 0,200 Q 360,100 720,200 T 1440,200" stroke="%2364748b" stroke-width="1" stroke-opacity="0.08" fill="none"/><path d="M 0,600 Q 360,700 720,600 T 1440,600" stroke="%2364748b" stroke-width="1" stroke-opacity="0.08" fill="none"/></svg>`;
+const LOGIN_BG = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" fill="none"><defs><radialGradient id="g1" cx="85%" cy="15%" r="50%"><stop offset="0%" stop-color="%236366f1" stop-opacity="0.1"/><stop offset="100%" stop-color="%236366f1" stop-opacity="0"/></radialGradient><radialGradient id="g2" cx="15%" cy="85%" r="50%"><stop offset="0%" stop-color="%236366f1" stop-opacity="0.08"/><stop offset="100%" stop-color="%236366f1" stop-opacity="0"/></radialGradient></defs><rect width="1440" height="900" fill="url(%23g1)"/><rect width="1440" height="900" fill="url(%23g2)"/><path d="M 0,200 Q 360,100 720,200 T 1440,200" stroke="%236366f1" stroke-width="1" stroke-opacity="0.08" fill="none"/><path d="M 0,600 Q 360,700 720,600 T 1440,600" stroke="%236366f1" stroke-width="1" stroke-opacity="0.08" fill="none"/></svg>`;
+
 // Inner App component that consumes contexts
 function MarketplaceApp() {
   const { state, dispatch } = useStore();
@@ -113,20 +118,24 @@ function MarketplaceApp() {
     }
   }, [currentUser]);
 
-  const roleGlowColor = currentUser?.role === 'shopper'
-    ? 'bg-blue-500/5 dark:bg-blue-500/10'
+  const activeBgSvg = currentUser?.role === 'shopper'
+    ? SHOPPER_BG
     : currentUser?.role === 'vendor'
-    ? 'bg-purple-500/5 dark:bg-purple-500/10'
+    ? VENDOR_BG
     : currentUser?.role === 'admin'
-    ? 'bg-slate-400/5 dark:bg-slate-700/10'
-    : 'bg-indigo-500/5 dark:bg-indigo-500/10';
+    ? ADMIN_BG
+    : LOGIN_BG;
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 flex flex-col font-sans relative overflow-hidden transition-colors duration-200">
-      {/* Role-specific ambient background glows */}
-      <div className={`absolute top-[-10%] right-[-10%] w-[55%] h-[55%] ${roleGlowColor} rounded-full blur-[130px] pointer-events-none transition-all duration-700`}></div>
-      <div className={`absolute bottom-[-10%] left-[20%] w-[60%] h-[60%] ${roleGlowColor} rounded-full blur-[140px] pointer-events-none transition-all duration-700`}></div>
-      
+    <div 
+      className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 flex flex-col font-sans relative overflow-hidden transition-all duration-300"
+      style={{
+        backgroundImage: `url("${activeBgSvg}")`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+      }}
+    >
       {/* Subtle grid pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4.5rem_4.5rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_40%,#000_50%,transparent_100%)] opacity-20 dark:opacity-30 pointer-events-none"></div>
 
