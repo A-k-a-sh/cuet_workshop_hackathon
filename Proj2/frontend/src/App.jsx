@@ -36,7 +36,14 @@ export default function App() {
   }, [inputs]);
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 flex flex-col transition-colors duration-200">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 flex flex-col relative overflow-hidden transition-colors duration-200">
+      {/* Ambient background mesh glows for heart medical health theme */}
+      <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-rose-500/5 dark:bg-rose-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-[-15%] left-[-10%] w-[60%] h-[60%] bg-emerald-500/5 dark:bg-emerald-500/10 rounded-full blur-[130px] pointer-events-none"></div>
+      
+      {/* Subtle ECG diagnostic layout grid overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_20%,#000_60%,transparent_100%)] opacity-20 dark:opacity-30 pointer-events-none"></div>
+
       {/* Header */}
       <header className="border-b border-slate-200/80 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md sticky top-0 z-50 px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2.5">

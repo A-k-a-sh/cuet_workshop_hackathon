@@ -113,8 +113,23 @@ function MarketplaceApp() {
     }
   }, [currentUser]);
 
+  const roleGlowColor = currentUser?.role === 'shopper'
+    ? 'bg-blue-500/5 dark:bg-blue-500/10'
+    : currentUser?.role === 'vendor'
+    ? 'bg-purple-500/5 dark:bg-purple-500/10'
+    : currentUser?.role === 'admin'
+    ? 'bg-slate-400/5 dark:bg-slate-700/10'
+    : 'bg-indigo-500/5 dark:bg-indigo-500/10';
+
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 flex flex-col font-sans transition-colors duration-200">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 flex flex-col font-sans relative overflow-hidden transition-colors duration-200">
+      {/* Role-specific ambient background glows */}
+      <div className={`absolute top-[-10%] right-[-10%] w-[55%] h-[55%] ${roleGlowColor} rounded-full blur-[130px] pointer-events-none transition-all duration-700`}></div>
+      <div className={`absolute bottom-[-10%] left-[20%] w-[60%] h-[60%] ${roleGlowColor} rounded-full blur-[140px] pointer-events-none transition-all duration-700`}></div>
+      
+      {/* Subtle grid pattern overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4.5rem_4.5rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_40%,#000_50%,transparent_100%)] opacity-20 dark:opacity-30 pointer-events-none"></div>
+
       
       {/* Floating Toast System Stack */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3 max-w-sm w-full pointer-events-none">
