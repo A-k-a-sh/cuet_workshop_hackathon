@@ -21,7 +21,9 @@ const INITIAL_VALUES = {
   thal: 2
 };
 
-const ECG_BACKGROUND = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" fill="none"><defs><radialGradient id="redGlow" cx="80%" cy="20%" r="45%" fx="80%" fy="20%"><stop offset="0%" stop-color="%23f43f5e" stop-opacity="0.12"/><stop offset="100%" stop-color="%23f43f5e" stop-opacity="0"/></radialGradient><radialGradient id="greenGlow" cx="20%" cy="80%" r="55%" fx="20%" fy="80%"><stop offset="0%" stop-color="%2310b981" stop-opacity="0.1"/><stop offset="100%" stop-color="%2310b981" stop-opacity="0"/></radialGradient></defs><rect width="1440" height="900" fill="url(%23redGlow)"/><rect width="1440" height="900" fill="url(%23greenGlow)"/><path d="M 0,350 L 300,350 L 320,310 L 340,390 L 360,330 L 380,350 L 600,350 L 620,280 L 645,440 L 670,320 L 690,350 L 1100,350 L 1120,300 L 1140,400 L 1160,330 L 1180,350 L 1440,350" stroke="%23f43f5e" stroke-width="1.5" stroke-opacity="0.15" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const ecgSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" fill="none"><defs><radialGradient id="redGlow" cx="80%" cy="20%" r="55%" fx="80%" fy="20%"><stop offset="0%" stop-color="#ef4444" stop-opacity="0.22"/><stop offset="100%" stop-color="#ef4444" stop-opacity="0"/></radialGradient><radialGradient id="greenGlow" cx="20%" cy="80%" r="60%" fx="20%" fy="80%"><stop offset="0%" stop-color="#10b981" stop-opacity="0.2"/><stop offset="100%" stop-color="#10b981" stop-opacity="0"/></radialGradient></defs><rect width="1440" height="900" fill="url(#redGlow)"/><rect width="1440" height="900" fill="url(#greenGlow)"/><path d="M 0,350 L 300,350 L 320,290 L 340,410 L 360,320 L 380,350 L 600,350 L 620,250 L 645,470 L 670,300 L 690,350 L 1100,350 L 1120,280 L 1140,420 L 1160,310 L 1180,350 L 1440,350" stroke="#f43f5e" stroke-width="2.5" stroke-opacity="0.35" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+const ECG_BACKGROUND = `data:image/svg+xml;base64,${window.btoa(ecgSvg)}`;
 
 export default function App() {
   const [inputs, setInputs] = useState(INITIAL_VALUES);
